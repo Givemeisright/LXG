@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>梁旭光的简历</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        /*css reset*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            margin-left: 1em;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+
+        /*layout*/
+        body {
+            display: grid;
+            grid: auto auto / 1fr 300px auto 1fr;
+        }
+
+        header {
+            background: lightgreen;
+            grid-column: 1 / span 4;
+            grid-row: 1;
+        }
+
+        main {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        aside {
+
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        @media (min-width: 1000px) {
+            body {
+                /* grid: 100px 400px / 1fr 200px 400px 1fr; */
+                grid: auto auto / 1fr 300px 700px 1fr;
+
+            }
+        }
+
+
+
+        /*common*/
+        body {
+            font: 14px/1.5 Arial;
+            color: #333;
+            padding-bottom: 30px;
+        }
+
+        /*page*/
+        header {
+            text-align: center;
+            padding: 10px;
+            background: #444;
+            color: #fff;
+        }
+
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        header figcaption {
+            font-weight: bold;
+            /* margin-top: 5px; */
+        }
+
+        header figure p {
+            /* margin-top: 5px; */
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                grid: auto auto auto / 1fr;
+                padding: 0 0 30px 0px;
+            }
+
+            header {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            header P {
+                /* display: none; */
+            }
+
+            main {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            aside {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            header img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        section {
+            display: grid;
+            grid: auto auto / 50px 120px 1fr;
+            align-items: center;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        section>.iconfont {
+            grid-row: 1;
+            grid-column: 1;
+            display: block;
+            width: 30px;
+            height: 30px;
+            background: #66a9a3;
+            border-radius: 50%;
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        section>h2 {
+            grid-row: 1;
+            grid-column: 2;
+            font-size: 18px;
+        }
+
+        section>hr {
+            grid-row: 1;
+            grid-column: 3;
+            border: none;
+            height: 3px;
+            background: #66a9a3;
+        }
+
+        section>.detail {
+            grid-row: 2;
+            grid-column: 2/span 2
+        }
+
+        section .icon-list {
+            display: flex;
+            align-items: center;
+        }
+
+        section .icon-list .iconfont {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        section .skill-bar dt {
+            margin-top: 16px;
+        }
+
+        section .skill-bar dd {
+            height: 3px;
+            background: #eaeaea;
+        }
+
+        section .skill-bar dd div {
+            height: 100%;
+            background: #66a9a3;
+            margin-top: 10px;
+        }
+
+        section .timeline-panel {
+            display: grid;
+            grid: auto auto auto/0px 1fr auto;
+            align-items: center;
+            margin-top: 16px;
+        }
+
+        section .timeline-panel .date {
+            grid-row: 2;
+            grid-column: 2;
+        }
+
+        section .timeline-panel>h3 {
+            grid-row: 1;
+            grid-column: 2;
+        }
+
+        section .timeline-panel .intro {
+            grid-row: 1;
+            grid-column: 3;
+            color: #666;
+        }
+
+        section .timeline-panel .detail {
+            grid-row: 3;
+            grid-column: 2/span 2;
+            margin-top: 10px;
+        }
+
+
+        @font-face {
+            font-family: "iconfont";
+            src: url('//at.alicdn.com/t/font_974371_cqiyab42oyq.eot?t=1545212646088');
+            /* IE9*/
+            src: url('//at.alicdn.com/t/font_974371_cqiyab42oyq.eot?t=1545212646088#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('data:application/x-font-woff;charset=utf-8;base64,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') format('woff'),
+                url('//at.alicdn.com/t/font_974371_cqiyab42oyq.ttf?t=1545212646088') format('truetype'),
+                /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+                url('//at.alicdn.com/t/font_974371_cqiyab42oyq.svg?t=1545212646088#iconfont') format('svg');
+            /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-about:before {
+            content: "\e6f7f";
+        }
+
+        .icon-wechat:before {
+            content: "\e63b";
+        }
+
+        .icon-personal:before {
+            content: "\e613";
+        }
+
+        .icon-email:before {
+            content: "\e622";
+        }
+
+        .icon-phone:before {
+            content: "\e63c";
+        }
+
+        .icon-project:before {
+            content: "\e63a";
+        }
+
+        .icon-introduction:before {
+            content: "\e609";
+        }
+
+        .icon-experience:before {
+            content: "\e61b";
+        }
+
+        .icon-skills:before {
+            content: "\e636";
+        }
+
+        .icon-education:before {
+            content: "\e637";
+        }
+
+        .detail li .showProject {
+            text-align: center;
+        }
+
+        .detail li .showProject img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <figure>
+            <img src="./picture/white.min.jpg" alt="头像">
+            <figcaption>梁旭光</figcaption>
+            <p>应聘前端工程师</p>
+        </figure>
+    </header>
+    <main>
+        <section>
+            <span class="iconfont icon-education"></span>
+            <h2>教育经历</h2>
+            <hr>
+            <div class="detail">
+                <div class="timeline-panel">
+                    <div class="date">09/2016~07/2020</div>
+                    <h3>广西科技大学</h3>
+                    <p class="intro">软件工程专业</p>
+                    <div class="detail">
+                    </div>
+                </div>
+                <div class="timeline-panel">
+                    <div class="date">09/2016~07/2020</div>
+                    <h3>澳大利亚南十字星大学</h3>
+                    <p class="intro">软件工程专业</p>
+                    <div class="detail">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section>
+            <span class="iconfont icon-experience"></span>
+            <h2>项目经历</h2>
+            <hr>
+            <div class="detail">
+                <div class="timeline-panel">
+                    <!-- <div class="date">11/2021~01/2022</div> -->
+                    <h3>齿轮UI库</h3>
+                    <p class="intro">文档预览：<a href="https://givemeisright.github.io/gearUI-serve/">官方文档</a></p>
+                    <div class="detail">
+                        <ul>
+                            <li><strong>项目介绍：</strong>
+                                齿轮 UI 是一款基于 Vue 3 和 TypeScript 的 UI 组件库,涵盖了Button, Tabs, Tab, Switch, Dialog,
+                                BackTop等常见UI组件。
+                                <br>
+                                深入研究 Vue 3，使用了 setup、onMounted、watchEffect、ref、computed 等 Compositioin API
+                                模块化的源代码简洁明了，易于阅读。每次修改代码都按照git提交规范提交。commit 历史：<a
+                                    href="https://github.com/Givemeisright/chips-ui/commits/master">点击查看</a>
+                                <br>
+                                我还推出了官方文档，可在线查看示例代码并复制使用，并支持 PC 和手机浏览。
+                                <br>
+                                已发布至npm可以通过文档安装并使用。</li>
+                            <li><strong>技术栈：</strong>vue3、vite、rollup、typescript、prismjs、es6、GitHub-markdown</li>
+                            <li><strong>项目展示:</strong>
+                                <div class="showProject"><img src="./picture/gearui.png" alt="齿轮UI库"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-panel">
+                    <h3>龙门记账簿</h3>
+                    <p class="intro">效果预览：<a href="https://givemeisright.github.io/longmen-serve/">效果预览</a></p>
+                    <div class="detail">
+                        <ul>
+                            <li><strong>项目介绍：</strong>
+                                龙门记账是一个基于Vue和TypeScript并使用Vue
+                                CLI搭建的一个在线记账页面，通过本地localStorage储存数据，可以修改或增加记账标签，还支持Echarts显示账务变化。
+                            </li>
+                            <li><strong>技术栈：</strong>vue、vue-router、vuex、mixin、typescript、vuecli、svg-sprite-loader、dayjs
+                            </li>
+                            <li><strong>项目展示:</strong>
+                                <div class="showProject"><img src="./picture/longmen.png" alt="龙门记账簿"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-panel">
+                    <h3>自动画太极</h3>
+                    <p class="intro">地址预览：<a href="https://givemeisright.github.io/verbatim-code/src/">效果预览</a></p>
+                    <div class="detail">
+                        <ul>
+                            <li><strong>项目介绍：</strong>
+                                自动画太极是我在学习JS和CSS的过程中，发现通过setInterval和style标签配合，可以动态的添加css代码。首先先写好css保存到字符中，然后向div和style标签中通过innerHTML第n个字符来实现展示和效果。考虑到用户体验还添加了速度控制按钮。
+                            </li>
+                            <li><strong>技术栈：</strong>JS、HTML、CSS</li>
+                            <li><strong>项目展示:</strong>
+                                <div class="showProject"><img src="./picture/auto.png" alt="自动画太极"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-panel">
+                    <h3>前端导航</h3>
+                    <p class="intro">地址预览：<a href="https://givemeisright.github.io/web-nav/src/index.html">效果预览</a></p>
+                    <div class="detail">
+                        <ul>
+                            <li><strong>项目介绍：</strong>前端导航是我在学习前端过程中，为了方便学习所设计的一个网站，初始了一些前端常用网站，并具有搜索功能，可以自定义添加站点或删除站点，支持按对应字母快速进入对应网站。
+                            </li>
+                            <li><strong>技术栈：</strong>jQuery、HTML、CSS</li>
+                            <li><strong>项目展示:</strong>
+                                <div class="showProject"><img src="./picture/nav.png" alt="前端导航"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-panel">
+                    <h3>JS日历</h3>
+                    <p class="intro">地址预览：<a href="https://givemeisright.github.io/calendar-js/">效果预览</a></p>
+                    <div class="detail">
+                        <ul>
+                            <li><strong>项目介绍：</strong>
+                                日历是我在学习js日期Date时所写的项目，通过调用Date对象方法，来还原一个真实的日历，并且实时显示为当天，同时可以显示当天有什么日程。
+                            </li>
+                            <li><strong>技术栈：</strong>Date、ES6、CSS</li>
+                            <li><strong>项目展示:</strong>
+                                <div class="showProject"><img src="./picture/calendar.png" alt="JS日历"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-panel">
+                    <h3>画板</h3>
+                    <p class="intro">地址预览：<a href="https://givemeisright.github.io/canvas-demo-1/index.html">效果预览</a>
+                    </p>
+                    <div class="detail">
+                        <ul>
+                            <li><strong>项目介绍：</strong>
+                                画板是我在学习canvas之后，通过canvas的一些方法来实现在页面上绘画，实现了画笔、橡皮、清空、保存、修改颜色、改变笔刷大小等功能，并且画布可以响应窗口变化自动调整大小。
+                            </li>
+                            <li><strong>技术栈：</strong>canvas、CSS、JS
+                            </li>
+                            <li><strong>项目展示:</strong>
+                                <div class="showProject"><img src="./picture/draw.png" alt="画板"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section>
+            <span class="iconfont icon-project"></span>
+            <h2>开源项目</h2>
+            <hr>
+
+            <div class="detail">
+                <div class="timeline-panel">
+                    <h3>模仿jQuery实现dom操作</h3>
+                    <p class="intro"><a
+                            href="https://github.com/Givemeisright/Jquery-dom/tree/main/src">源码预览</a></p>
+                    <div class="detail">
+                        <ul>
+                            <li><strong>项目介绍：</strong>
+                                我在学习jQuery的过程中，发现jquery的dom操作比原生js方便，对其如何实现产生了兴趣，在查阅资料和总结之后，模仿出jQuery的dom操作代码，将jquery放在window上，jQuery 会接受一个css选择器， 然后会获取到这个元素，但不会返回这个元素， 会返回一个对象， 对象里面有一些方法，这些方法（ 函数） 可以操作这个元素。使用闭包维持这个元素，因为有函数要访问这个元素。按用户习惯操作是通过api对象来调用函数，所以直接返回this，实现链式操作。
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="timeline-panel">
+                        <!-- <div class="date">09/2021~01/2022</div> -->
+                        <h3>webpack打包文件</h3>
+                        <p class="intro"><a href="https://github.com/Givemeisright/webpack-demo">源码预览</a></p>
+                        <div class="detail">
+                            <ul>
+                                <li><strong>项目介绍：</strong>
+                                    我在学习webpack的过程中，学习配置webpackc.onfig,通过file-loader、style-loader、css-loader、stylus-loader、sass-loader、dart-sass等对文件进行打包，并实现懒加载。
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="timeline-panel">
+                        <!-- <div class="date">09/2021~01/2022</div> -->
+                        <h3>AJAX加载</h3>
+                        <p class="intro"><a href="https://github.com/Givemeisright/AJAX-load">源码预览</a></p>
+                        <div class="detail">
+                            <ul>
+                                <li><strong>项目介绍：</strong>
+                                    我在学习Ajax的过程中，通过设置简易本地服务器，来对文件进行异步请求，然后加载并显示在页面上。
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+    </main>
+    <aside>
+        <section>
+            <span class="iconfont icon-personal"></span>
+            <h2>基本信息</h2>
+            <hr>
+            <div class="detail">
+                <div class="icon-list"><span class="iconfont icon-phone"></span>13978037351</div>
+                <div class="icon-list"><span class="iconfont icon-wechat"></span>illumination_97</div>
+                <div class="icon-list"><span class="iconfont icon-email"></span>479161553@qq.com</div>
+                <div class="icon-list"><span class="iconfont icon-education"></span>本科</div>
+
+
+
+
+            </div>
+        </section>
+        <section>
+            <span class="iconfont icon-introduction"></span>
+            <h2>掌握技能</h2>
+            <hr>
+            <div class="detail">
+                <ul>
+                    <li>掌握HTML5/CSS3，熟悉传统布局、Flex布局、Grid布局、移动端适配等</li>
+                    <li>熟悉Vue技术栈如Vue-Router、Vuex、Vue-CLI及相关流行库的使用，理解其重要概念</li>
+                    <li>熟悉前后端分离技术，包括 AJAX、跨域、前端路由、Cookie、Session 等</li>
+                    <li>熟悉 ES6，包括 let / Promise / await / 析构赋值</li>
+                    <li>了解 TypeScript 的使用，我的项目就是 TS 实现的</li>
+                    <li>了解 Webpack 的配置和优化</li>
+
+                </ul>
+            </div>
+        </section>
+        <section>
+            <span class="iconfont icon-skills"></span>
+            <h2>技能图谱</h2>
+            <hr>
+            <div class="detail">
+                <dl class="skill-bar">
+                    <dt>JavaScript</dt>
+                    <dd>
+                        <div style="width:50%"></div>
+                    </dd>
+                    <dt>Vue</dt>
+                    <dd>
+                        <div style="width:70%"></div>
+                    </dd>
+                    <dt>项目开发</dt>
+                    <dd>
+                        <div style="width:80%"></div>
+                    </dd>
+                    <dt>静态页面</dt>
+                    <dd>
+                        <div style="width:60%"></div>
+                    </dd>
+                    <dt>沟通能力</dt>
+                    <dd>
+                        <div style="width:88%"></div>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+    </aside>
+
+</body>
+
+</html>
