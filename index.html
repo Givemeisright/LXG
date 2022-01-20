@@ -122,7 +122,10 @@
                 width: 80px;
                 height: 80px;
             }
+
+
         }
+
 
         section {
             display: grid;
@@ -309,6 +312,21 @@
         .web-hidden {
             display: list-item;
         }
+
+        @media (max-width: 768px) {
+            .detail div.page2 {
+                margin-top: 150px;
+            }
+            main{
+                margin: 0 15px;
+            }
+            aside{
+                margin: 0 15px;
+            }
+            .page3{
+                margin-top: 200px;
+            }
+        }
     </style>
 
 </head>
@@ -420,7 +438,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="timeline-panel">
+                <div class="timeline-panel page2">
                     <h3>万年历</h3>
                     <p class="intro"><a href="https://givemeisright.github.io/calendar-js/">效果预览</a></p>
                     <div class="detail">
@@ -475,7 +493,7 @@
                     </div>
                 </div>
 
-                <div class="detail print-hidden">
+                <div class="detail ">
                     <div class="timeline-panel">
                         <!-- <div class="date">09/2021~01/2022</div> -->
                         <h3>webpack打包文件</h3>
@@ -489,7 +507,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="detail print-hidden">
+                <div class="detail ">
                     <div class="timeline-panel">
                         <!-- <div class="date">09/2021~01/2022</div> -->
                         <h3>AJAX加载</h3>
@@ -525,7 +543,7 @@
 
             </div>
         </section>
-        <section>
+        <section class="page3">
             <span class="iconfont icon-introduction"></span>
             <h2>掌握技能</h2>
             <hr>
@@ -533,9 +551,9 @@
                 <ul>
                     <li>掌握HTML5/CSS3，熟悉传统布局、Flex布局、Grid布局、移动端适配等。</li>
                     <li>熟悉Vue技术栈如Vue-Router、Vuex、Vue-CLI及相关流行库的使用，理解其重要概念。</li>
-                    <li>熟悉前后端分离技术，包括
+                    <li >熟悉前后端分离技术，包括
                         AJAX、跨域、前端路由、Cookie、Session 等。</li>
-                    <li>熟悉 ES6，包括 let / Promise / await / 析构赋值。</li>
+                    <li >熟悉 ES6，包括 let / Promise / await / 析构赋值。</li>
                     <li>了解 TypeScript 的使用，我的项目就是 TS 实现的。</li>
                     <li>了解 Webpack 的配置和优化。</li>
                 </ul>
