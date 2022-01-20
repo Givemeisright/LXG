@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 
 <head>
     <meta charset="utf-8">
     <title>梁旭光的简历</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <style>
         /*css reset*/
         * {
@@ -21,8 +22,15 @@
             margin-top: 10px;
         }
 
+        a {
+            color: #999;
+            text-decoration: none;
+            border-bottom: 1px solid;
+        }
+
         /*layout*/
         body {
+            display: -ms-grid;
             display: grid;
             grid: auto auto / 1fr 300px auto 1fr;
         }
@@ -277,12 +285,32 @@
         }
 
         .detail li .showProject img {
-            max-width: 100%;
+            max-width: 50%;
+            max-height: 300px;
         }
-        .education{
+
+        .education {
             height: 170px;
         }
+
+        .web-hidden {
+            display: none;
+        }
     </style>
+    <style media="print">
+        .print-hidden {
+            display: none;
+        }
+
+        .detail li.showProject-li {
+            display: none;
+        }
+
+        .web-hidden {
+            display: list-item;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -324,22 +352,22 @@
                 <div class="timeline-panel">
                     <!-- <div class="date">11/2021~01/2022</div> -->
                     <h3>齿轮UI库</h3>
-                    <p class="intro">文档预览：<a href="https://givemeisright.github.io/gearUI-serve/">官方文档</a></p>
+                    <p class="intro"><a href="https://givemeisright.github.io/gearUI-serve/">查看官方文档</a></p>
                     <div class="detail">
                         <ul>
                             <li><strong>项目介绍：</strong>
                                 齿轮 UI 是一款基于 Vue 3 和 TypeScript 的 UI 组件库,涵盖了Button, Tabs, Tab, Switch, Dialog,
                                 BackTop等常见UI组件。
-                                <br>
+
                                 深入研究 Vue 3，使用了 setup、onMounted、watchEffect、ref、computed 等 Compositioin API
-                                模块化的源代码简洁明了，易于阅读。每次修改代码都按照git提交规范提交。commit 历史：<a
-                                    href="https://github.com/Givemeisright/chips-ui/commits/master">点击查看</a>
-                                <br>
+                                模块化的源代码简洁明了，易于阅读。
+
                                 我还推出了官方文档，可在线查看示例代码并复制使用，并支持 PC 和手机浏览。
-                                <br>
-                                已发布至npm可以通过文档安装并使用。</li>
+
+                                已发布至npm可以通过文档安装并使用。每次修改代码都按照git提交规范提交。commit 历史：<a
+                                    href="https://github.com/Givemeisright/chips-ui/commits/master">点击查看</a></li>
                             <li><strong>技术栈：</strong>vue3、vite、rollup、typescript、prismjs、es6、GitHub-markdown</li>
-                            <li><strong>项目展示:</strong>
+                            <li class="showProject-li"><strong>项目展示:</strong>
                                 <div class="showProject"><img src="./picture/gearui.png" alt="齿轮UI库"></div>
                             </li>
                         </ul>
@@ -347,16 +375,17 @@
                 </div>
                 <div class="timeline-panel">
                     <h3>龙门记账簿</h3>
-                    <p class="intro">效果预览：<a href="https://givemeisright.github.io/longmen-serve/">效果预览</a></p>
+                    <p class="intro"><a href="https://givemeisright.github.io/longmen-serve/">项目预览</a></p>
                     <div class="detail">
                         <ul>
                             <li><strong>项目介绍：</strong>
                                 龙门记账是一个基于Vue和TypeScript并使用Vue
-                                CLI搭建的一个在线记账页面，通过本地localStorage储存数据，可以修改或增加记账标签，还支持Echarts显示账务变化。
+                                CLI搭建的一个在线记账页面，通过本地localStorage储存数据，可以修改或增加记账标签，还支持Echarts显示账务变化。页面设计为移动端使用，页面简洁，易于使用。每次修改都有提交commit，并描述修改内容。<br>
+                                commit 历史：<a href="https://github.com/Givemeisright/longmen/commits/master">点击查看</a>
                             </li>
                             <li><strong>技术栈：</strong>vue、vue-router、vuex、mixin、typescript、vuecli、svg-sprite-loader、dayjs
                             </li>
-                            <li><strong>项目展示:</strong>
+                            <li class="showProject-li"><strong>项目展示:</strong>
                                 <div class="showProject"><img src="./picture/longmen.png" alt="龙门记账簿"></div>
                             </li>
                         </ul>
@@ -364,51 +393,51 @@
                 </div>
                 <div class="timeline-panel">
                     <h3>自动画太极</h3>
-                    <p class="intro">地址预览：<a href="https://givemeisright.github.io/verbatim-code/src/">效果预览</a></p>
+                    <p class="intro"><a href="https://givemeisright.github.io/verbatim-code/src/">效果预览</a></p>
                     <div class="detail">
                         <ul>
                             <li><strong>项目介绍：</strong>
                                 自动画太极是我在学习JS和CSS的过程中，发现通过setInterval和style标签配合，可以动态的添加css代码。首先先写好css保存到字符中，然后向div和style标签中通过innerHTML第n个字符来实现展示和效果。考虑到用户体验还添加了速度控制按钮。
                             </li>
                             <li><strong>技术栈：</strong>JS、HTML、CSS</li>
-                            <li><strong>项目展示:</strong>
+                            <li class="showProject-li"><strong>项目展示:</strong>
                                 <div class="showProject"><img src="./picture/auto.png" alt="自动画太极"></div>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-panel">
-                    <h3>前端导航</h3>
-                    <p class="intro">地址预览：<a href="https://givemeisright.github.io/web-nav/src/index.html">效果预览</a></p>
+                    <h3>卡片导航</h3>
+                    <p class="intro"><a href="https://givemeisright.github.io/web-nav/src/index.html">效果预览</a></p>
                     <div class="detail">
                         <ul>
-                            <li><strong>项目介绍：</strong>前端导航是我在学习前端过程中，为了方便学习所设计的一个网站，初始了一些前端常用网站，并具有搜索功能，可以自定义添加站点或删除站点，支持按对应字母快速进入对应网站。
+                            <li><strong>项目介绍：</strong>卡片导航是我在学习前端过程中，为了方便学习所设计的一个网站，初始了一些前端常用网站，并具有搜索功能，可以自定义添加站点或删除站点，支持按对应字母快速进入对应网站。
                             </li>
                             <li><strong>技术栈：</strong>jQuery、HTML、CSS</li>
-                            <li><strong>项目展示:</strong>
+                            <li class="showProject-li"><strong>项目展示:</strong>
                                 <div class="showProject"><img src="./picture/nav.png" alt="前端导航"></div>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-panel">
-                    <h3>JS日历</h3>
-                    <p class="intro">地址预览：<a href="https://givemeisright.github.io/calendar-js/">效果预览</a></p>
+                    <h3>万年历</h3>
+                    <p class="intro"><a href="https://givemeisright.github.io/calendar-js/">效果预览</a></p>
                     <div class="detail">
                         <ul>
                             <li><strong>项目介绍：</strong>
-                                日历是我在学习js日期Date时所写的项目，通过调用Date对象方法，来还原一个真实的日历，并且实时显示为当天，同时可以显示当天有什么日程。
+                                万年历是我在学习js日期Date时所写的项目，通过调用Date对象方法，来还原一个真实的日历，并且实时显示为当天，同时可以显示当天有什么日程。
                             </li>
                             <li><strong>技术栈：</strong>Date、ES6、CSS</li>
-                            <li><strong>项目展示:</strong>
+                            <li class="showProject-li"><strong>项目展示:</strong>
                                 <div class="showProject"><img src="./picture/calendar.png" alt="JS日历"></div>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-panel">
-                    <h3>画板</h3>
-                    <p class="intro">地址预览：<a href="https://givemeisright.github.io/canvas-demo-1/index.html">效果预览</a>
+                    <h3>易画板</h3>
+                    <p class="intro"><a href="https://givemeisright.github.io/canvas-demo-1/index.html">效果预览</a>
                     </p>
                     <div class="detail">
                         <ul>
@@ -417,7 +446,7 @@
                             </li>
                             <li><strong>技术栈：</strong>canvas、CSS、JS
                             </li>
-                            <li><strong>项目展示:</strong>
+                            <li class="showProject-li"><strong>项目展示:</strong>
                                 <div class="showProject"><img src="./picture/draw.png" alt="画板"></div>
                             </li>
                         </ul>
@@ -434,18 +463,19 @@
             <div class="detail">
                 <div class="timeline-panel">
                     <h3>模仿jQuery实现dom操作</h3>
-                    <p class="intro"><a
-                            href="https://github.com/Givemeisright/Jquery-dom/tree/main/src">源码预览</a></p>
+                    <p class="intro"><a href="https://github.com/Givemeisright/Jquery-dom/tree/main/src">源码预览</a></p>
                     <div class="detail">
                         <ul>
                             <li><strong>项目介绍：</strong>
-                                我在学习jQuery的过程中，发现jquery的dom操作比原生js方便，对其如何实现产生了兴趣，在查阅资料和总结之后，模仿出jQuery的dom操作代码，将jquery放在window上，jQuery 会接受一个css选择器， 然后会获取到这个元素，但不会返回这个元素， 会返回一个对象， 对象里面有一些方法，这些方法（ 函数） 可以操作这个元素。使用闭包维持这个元素，因为有函数要访问这个元素。按用户习惯操作是通过api对象来调用函数，所以直接返回this，实现链式操作。
+                                我在学习jQuery的过程中，发现jquery的dom操作比原生js方便，对其如何实现产生了兴趣，在查阅资料和总结之后，模仿出jQuery的dom操作代码，将jquery放在window上，jQuery
+                                会接受一个css选择器， 然后会获取到这个元素，但不会返回这个元素， 会返回一个对象， 对象里面有一些方法，这些方法（ 函数）
+                                可以操作这个元素。使用闭包维持这个元素，因为有函数要访问这个元素。按用户习惯操作是通过api对象来调用函数，所以直接返回this，实现链式操作。
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="detail">
+                <div class="detail print-hidden">
                     <div class="timeline-panel">
                         <!-- <div class="date">09/2021~01/2022</div> -->
                         <h3>webpack打包文件</h3>
@@ -459,7 +489,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="detail">
+                <div class="detail print-hidden">
                     <div class="timeline-panel">
                         <!-- <div class="date">09/2021~01/2022</div> -->
                         <h3>AJAX加载</h3>
@@ -501,22 +531,40 @@
             <hr>
             <div class="detail">
                 <ul>
-                    <li>掌握HTML5/CSS3，熟悉传统布局、Flex布局、Grid布局、移动端适配等</li>
-                    <li>熟悉Vue技术栈如Vue-Router、Vuex、Vue-CLI及相关流行库的使用，理解其重要概念</li>
-                    <li>熟悉前后端分离技术，包括 AJAX、跨域、前端路由、Cookie、Session 等</li>
-                    <li>熟悉 ES6，包括 let / Promise / await / 析构赋值</li>
-                    <li>了解 TypeScript 的使用，我的项目就是 TS 实现的</li>
-                    <li>了解 Webpack 的配置和优化</li>
-
+                    <li>掌握HTML5/CSS3，熟悉传统布局、Flex布局、Grid布局、移动端适配等。</li>
+                    <li>熟悉Vue技术栈如Vue-Router、Vuex、Vue-CLI及相关流行库的使用，理解其重要概念。</li>
+                    <li>熟悉前后端分离技术，包括
+                        AJAX、跨域、前端路由、Cookie、Session 等。</li>
+                    <li>熟悉 ES6，包括 let / Promise / await / 析构赋值。</li>
+                    <li>了解 TypeScript 的使用，我的项目就是 TS 实现的。</li>
+                    <li>了解 Webpack 的配置和优化。</li>
                 </ul>
             </div>
         </section>
+
         <section>
             <span class="iconfont icon-skills"></span>
-            <h2>技能图谱</h2>
+            <h2>个人总结</h2>
             <hr>
             <div class="detail">
-                <dl class="skill-bar">
+                <ul>
+                    <li>喜欢总结和学习新技能，在学习之后有写博客的习惯，现有博客文章21篇，随笔6篇。</li>
+                    <li>热爱开源项目，愿意与其他程序员一起交流学习，学习所写项目都放在了GitHub上。</li>
+                    <li>有良好的编码习惯，按照规范命名CSS类和函数名，会在代码中留下容易理解和阅读的注释。</li>
+                    <li>可以按照项目计划，按时提交高质量代码，完成开发任务。</li>
+                </ul>
+                <br>
+                <strong>相关链接:</strong>
+                <ul>
+                    <li>博客园：<a href="https://www.cnblogs.com/liangxuguang/">我的博客</a></li>
+                    <li>基于GitHub issues的自建博客：
+                        <br><a href="https://givemeisright.github.io/github.Givemeisright.io/dist/#/">我的GitHub博客</a>
+                    </li>
+                    <li class="web-hidden">这份简历我还写了网页版，您可以查看我的网页版简历，里面包含更多内容：<a
+                            href="https://givemeisright.github.io/LXG/">web简历</a>
+                    </li>
+                </ul>
+                <dl class="skill-bar print-hidden">
                     <dt>JavaScript</dt>
                     <dd>
                         <div style="width:70%"></div>
